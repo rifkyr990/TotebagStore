@@ -4,6 +4,7 @@ namespace App\Models;
 
 use App\Models\Product;
 use App\Models\Order;
+use App\Models\Cart;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
@@ -14,6 +15,11 @@ class Size extends Model
         'id',
         'nama_size',
     ];
+
+    public function carts()
+    {
+        return $this->hasMany(Cart::class, 'size_id', 'id');
+    }
 
     public function orders()
     {

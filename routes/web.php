@@ -22,14 +22,16 @@ Auth::routes();
 
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
 Route::get('/', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
+Route::get('about', [App\Http\Controllers\HomeController::class, 'about'])->name('about');
 
 Route::get('order', [App\Http\Controllers\OrderController::class, 'index'])->name('order');
 Route::get('show/{order}', [App\Http\Controllers\OrderController::class, 'show'])->name('show');
 Route::get('edit/{order}', [App\Http\Controllers\OrderController::class, 'edit'])->name('edit');
 Route::put('edit/{order}', [App\Http\Controllers\OrderController::class, 'update'])->name('update');
 Route::delete('/{order}', [App\Http\Controllers\OrderController::class, 'destroy'])->name('destroy');
-Route::post('/store', [App\Http\Controllers\OrderController::class, 'store'])->name('store');
+Route::post('/addcustom', [App\Http\Controllers\OrderController::class, 'addcustom'])->name('addcustom');
 Route::get('create', [App\Http\Controllers\OrderController::class, 'create'])->name('create');
+Route::get('myorder', [App\Http\Controllers\OrderController::class, 'myOrder'])->name('myorder');
 
 Route::get('alamat', [App\Http\Controllers\CustomerController::class, 'create'])->name('alamat');
 Route::post('/addalamat', [App\Http\Controllers\CustomerController::class, 'addalamat'])->name('addalamat');
@@ -42,4 +44,4 @@ Route::delete('/{product}', [App\Http\Controllers\ProductController::class, 'des
 Route::post('/store', [App\Http\Controllers\ProductController::class, 'store'])->name('store');
 Route::post('/addcart/{product}', [App\Http\Controllers\ProductController::class, 'addcart'])->name('addcart');
 
-Route::get('payment/{order}', [App\Http\Controllers\OrderController::class, 'payment'])->name('payment');
+Route::get('/payment/{order}', [App\Http\Controllers\OrderController::class, 'payment'])->name('payment');

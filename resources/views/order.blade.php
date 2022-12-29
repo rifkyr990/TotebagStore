@@ -2,7 +2,7 @@
 @section('content')
 
 <div class="container mt-5">
-    <h2 class="text-center fw-bold py-5">Data Orderan</h2>
+    <h2 class="text-center fw-bold pt-5">Data Orderan</h2>
     <div class="custom-separator my-3 mb-5 mx-auto bg-brown"></div>
     <table class="table table-bordered">
         <thead>

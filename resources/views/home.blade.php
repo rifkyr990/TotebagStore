@@ -19,7 +19,7 @@
                 <h1>Totebag stylist kece kekinian <span>BagUp</span></h1>
                 <h2>Berbagai macam dan jenis totebag tersedia disiniiii</h2>
                 <div class="text-center text-lg-start">
-                    <a href="#service" class="css-button-rounded--green text-decoration-none text-center">Order Now</a>
+                    <a href="{{ route('product') }}" class="css-button-rounded--green text-decoration-none text-center">Order Now</a>
                 </div>
             </div>
         </div>

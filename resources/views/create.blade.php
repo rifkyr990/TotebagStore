@@ -19,7 +19,7 @@
         @else
 
         @endif
-        <form action="{{ route('store') }}" method="POST" enctype="multipart/form-data" class="w-75 d-block mx-auto">
+        <form action="{{ route('addcustom') }}" method="POST" enctype="multipart/form-data" class="w-75 d-block mx-auto">
             @csrf
             <div class="row">
                 <div class="form-group col-sm-12 mt-2">
@@ -42,11 +42,14 @@
                     </select>
                 </div>
 
-                <div class="col-xs-12 my-sm-2">
-                    <div class="form-group">
-                        <p><strong>Pilih warna</strong></p>
-                        <input type="text" name="color" id="" class="form-control w-25" placeholder="warna">
-                    </div>
+                <div class="form-group col-sm-12 mt-3">
+                    <label for="size_id"><strong>Warna</strong></label>
+                    <select class="form-select w-50" name="color_id" id="color_id">
+                        <option value="" selected>Pilih Warna</option>
+                        @foreach ($color as $data)
+                        <option value="{{$data->id}}" onkeyup="sum();">{{ $data->nama_warna }}</option>
+                        @endforeach
+                    </select>
                 </div>
 
                 <div class="form-group col-sm-6 mt-2">

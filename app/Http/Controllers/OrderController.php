@@ -2,10 +2,13 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Cart;
 use App\Models\Size;
 use App\Models\Order;
 use App\Models\Customer;
-use App\Models\Material; 
+use App\Models\Material;
+use App\Models\Product;
+use App\Models\Color;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 
@@ -33,11 +36,12 @@ class OrderController extends Controller
      */
     public function create()
     {
+        $color = Color::all();
         $material = Material::all();
         $customer = Customer::where('user_id', Auth::id())->get();
         $size = Size::all();
 
-        return view('create', compact('material', 'customer', 'size'));
+        return view('create', compact('material', 'customer', 'size', 'color'));
     }
 
     /**
@@ -46,7 +50,7 @@ class OrderController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(Request $request)
+    public function addcustom(Request $request)
     {
         $request->validate([
             'design' => 'required|file|mimes:png,jpg,svg|max:2048'
@@ -64,13 +68,13 @@ class OrderController extends Controller
         $order->design = $designImage;
         $order->material_id = $data['material_id'];
         $order->size_id = $data['size_id'];
-        $order->color = $data['color'];
+        $order->color_id = $data['color_id'];
         $order->customer_id = $data['customer_id'];
         $order->quantity = $data['quantity'];
         $order->user_id = auth()->id();
         $order->save();
 
-        return redirect()->route('payment')->with('success', 'berhasil');
+        return redirect()->route('payment', $order->id)->with('success', 'berhasil');
     }
 
     /**
@@ -158,5 +162,19 @@ class OrderController extends Controller
         $order->delete();
 
         return redirect()->route('order')->with('success', 'orderan berhasil dihapus');
+    }
+
+    /**
+     * Display the specified resource.
+     *
+     * @param  \App\Models\Product  $product
+     * @return \Illuminate\Http\Response
+     */
+
+    public function myOrder(Order $order) {
+        $orders = Order::where('user_id', Auth::id())->get();
+        $products = Cart::where('user_id', Auth::id())->get();
+        
+        return view('myorder', compact('products', 'orders'));
     }
 }

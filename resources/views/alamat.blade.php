@@ -20,18 +20,18 @@
         @else
 
         @endif
-        <form action="{{ route('addalamat') }}" method="POST" enctype="multipart/form-data">
+        <form action="{{ route('addalamat') }}" method="POST" enctype="multipart/form-data" class="w-75 d-block mx-auto">
             @csrf
             <div class="row">
                 <div class="col-xs-12 my-sm-2">
                     <div class="form-group">
-                        <p><strong>Name</strong></p>
+                        <p><strong>Nama penerima</strong></p>
                         <input type="text" name="nama" id="" class="form-control" placeholder="Nama pengguna">
                     </div>
                 </div>
                 <div class="col-xs-12 my-sm-2">
                     <div class="form-group">
-                        <p><strong>No. handphone</strong></p>
+                        <p><strong>No. handphone penerima</strong></p>
                         <input type="number" name="hp" id="" class="form-control" placeholder="No. handphone">
                     </div>
                 </div>

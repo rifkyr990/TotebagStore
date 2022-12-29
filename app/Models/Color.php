@@ -14,6 +14,11 @@ class Color extends Model
         'kode_warna',
     ];
 
+    public function carts()
+    {
+        return $this->hasMany(Cart::class, 'color_id', 'id');
+    }
+
     public function orders()
     {
         return $this->hasMany(Order::class, 'color_id', 'id');

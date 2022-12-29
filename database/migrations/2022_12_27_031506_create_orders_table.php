@@ -17,7 +17,7 @@ return new class extends Migration
             $table->id();
             $table->integer('user_id');
             $table->integer('material_id');
-            $table->string('color');
+            $table->integer('color_id');
             $table->integer('size_id');
             $table->integer('quantity');
             $table->string('design');

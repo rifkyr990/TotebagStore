@@ -19,7 +19,7 @@
             <div class="row g-0">
                 <div class="col-md-6 border-end">
                     <div class="d-flex flex-column justify-content-center">
-                        <div class="main_image"> <img src="/products/{{ $product->gambar }}" width="350"> </div>
+                        <div class="main_image"> <img src="/products/{{ $product->gambar }}" width="350" class="align-items-center w-50 mt-5 pt-5"> </div>
                     </div>
                 </div>
                 <div class="col-md-6">
@@ -41,8 +41,8 @@
 
                             @csrf
 
-                            <div class="form-group col-sm-12 mt-2">
-                                <label for="size_id"><strong>Warna</strong></label>
+                            <div class="form-group col-sm-12 mt-3">
+                                <label for="color_id"><strong>Warna</strong></label>
                                 <select class="form-select w-25" name="color_id" id="color_id">
                                     <option value="" selected>Pilih Warna</option>
                                     @foreach ($color as $data)
@@ -50,7 +50,7 @@
                                     @endforeach
                                 </select>
                             </div>
-                            <div class="quantity col-sm-6">
+                            <div class="quantity col-sm-6 mt-2">
                                 <span><strong>Total quantity :</strong></span>
                                 <input type="number" name="quantity" id="" class="form-control w-25" value="1" min="1">
                             </div>
@@ -65,7 +65,7 @@
                             </div>
                             <div class="buttons d-flex flex-row mt-5 gap-3">
                                 <button class="btn btn-outline-dark" type="submit">Beli Sekarang</button>
-                                <!-- <button class="btn btn-dark">Tambah keranjang</button> -->
+                                <button class="btn btn-dark"><a href="{{url('/product')}}" class="text-decoration-none text-light">Kembali</a></button>
                             </div>
                         </form>
                     </div>

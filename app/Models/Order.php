@@ -17,12 +17,17 @@ class Order extends Model
     protected $fillable = [
         'user_id',
         'material_id',
-        'color',
+        'color_id',
         'size_id',
         'quantity',
         'customer_id',
         'design',
     ];
+
+    public function color()
+    {
+        return $this->belongsTo(Color::class);
+    }
 
     public function material()
     {

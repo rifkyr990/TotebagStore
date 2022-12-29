@@ -8,6 +8,7 @@ use App\Models\Size;
 use App\Models\Product;
 use App\Models\Material;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
 
 class ProductController extends Controller
 {
@@ -99,6 +100,10 @@ class ProductController extends Controller
 
     public function addcart(Request $request, $id)
     {
+        $request->validate([
+            'size_id' => 'required',
+            'color_id' => 'required',
+        ]);
         $product = Product::find($id);
 
         $cart = new Cart;
@@ -108,6 +113,7 @@ class ProductController extends Controller
         $cart->quantity = $request->quantity;
         $cart->size_id = $request->size_id;
         $cart->total_cost = $product->harga * $cart->quantity;
+        $cart->user_id = auth()->id();
         $cart->save();
 
         return redirect()->back()->with('status', 'Product berhasil ditambah');
