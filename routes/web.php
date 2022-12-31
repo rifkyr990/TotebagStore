@@ -44,4 +44,5 @@ Route::delete('/{product}', [App\Http\Controllers\ProductController::class, 'des
 Route::post('/store', [App\Http\Controllers\ProductController::class, 'store'])->name('store');
 Route::post('/addcart/{product}', [App\Http\Controllers\ProductController::class, 'addcart'])->name('addcart');
 
+Route::get('/product/payment/{cart}', [App\Http\Controllers\ProductController::class, 'payments'])->name('payments');
 Route::get('/payment/{order}', [App\Http\Controllers\OrderController::class, 'payment'])->name('payment');

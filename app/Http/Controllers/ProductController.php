@@ -90,6 +90,18 @@ class ProductController extends Controller
      * @param  \App\Models\Product  $product
      * @return \Illuminate\Http\Response
      */
+    public function payments(Cart $cart)
+    {
+
+        return view('payments', compact('cart'));
+    }
+
+    /**
+     * Show the form for editing the specified resource.
+     *
+     * @param  \App\Models\Product  $product
+     * @return \Illuminate\Http\Response
+     */
     public function edit(Product $product)
     {
         $material = Material::all();
@@ -116,7 +128,7 @@ class ProductController extends Controller
         $cart->user_id = auth()->id();
         $cart->save();
 
-        return redirect()->back()->with('status', 'Product berhasil ditambah');
+        return redirect()->route('payments', $cart->id)->with('success', 'berhasil');
     }
     /**
      * Update the specified resource in storage.
