@@ -34,13 +34,16 @@ Route::get('create', [App\Http\Controllers\OrderController::class, 'create'])->n
 Route::get('myorder', [App\Http\Controllers\OrderController::class, 'myOrder'])->name('myorder');
 
 Route::get('alamat', [App\Http\Controllers\CustomerController::class, 'create'])->name('alamat');
+Route::get('confirm', [App\Http\Controllers\CustomerController::class, 'confirm'])->name('confirm');
 Route::post('/addalamat', [App\Http\Controllers\CustomerController::class, 'addalamat'])->name('addalamat');
+Route::post('/addconfirm', [App\Http\Controllers\CustomerController::class, 'addconfirm'])->name('addconfirm');
+Route::delete('/{customer}', [App\Http\Controllers\CustomerController::class, 'hapus'])->name('hapus');
 
 Route::get('product', [App\Http\Controllers\ProductController::class, 'index'])->name('product');
 Route::get('/product/create', [App\Http\Controllers\ProductController::class, 'create'])->name('create');
 Route::get('/product/edit/{product}', [App\Http\Controllers\ProductController::class, 'edit'])->name('edit');
 Route::get('/product/show/{product}', [App\Http\Controllers\ProductController::class, 'show'])->name('show');
-Route::delete('/{product}', [App\Http\Controllers\ProductController::class, 'destroy'])->name('destroy');
+Route::delete('/{product}', [App\Http\Controllers\ProductController::class, 'hapusproduct'])->name('hapusproduct');
 Route::post('/store', [App\Http\Controllers\ProductController::class, 'store'])->name('store');
 Route::post('/addcart/{product}', [App\Http\Controllers\ProductController::class, 'addcart'])->name('addcart');
 

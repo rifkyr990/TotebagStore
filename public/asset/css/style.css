@@ -162,7 +162,7 @@ nav {
 
 @media (max-width: 991px) {
     #hero {
-        padding-top: 80px;
+        padding-top: 10px;
     }
 
     #hero .hero-img {

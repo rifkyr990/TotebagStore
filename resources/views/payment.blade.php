@@ -50,7 +50,7 @@
                 </div>
                 <p class="mb-0 mt-3 fs-5"><strong>Total pembayaran : </strong> Rp {{number_format($order->material->harga * $order->quantity)}}</p>
                 <div class="mt-5"> 
-                    <button class="btn btn-primary btn-block payment-button"><a href="https://wa.me/0895394477132"
+                <button class="btn btn-primary btn-block payment-button"><a href="{{ url('/confirm') }}"
                             class="text-light text-decoration-none">Konfirmasi Pembayaran <i
                                 class="fa fa-long-arrow-right"></i></a></button>
                     <button class="btn btn-danger btn-block payment-button mx-2"><a href="{{ url('home') }}"

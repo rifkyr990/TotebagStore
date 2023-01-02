@@ -21,6 +21,7 @@ return new class extends Migration
             $table->integer('size_id');
             $table->integer('quantity');
             $table->string('design');
+            $table->integer('pickup_id');
             $table->integer('status_id')->default('1');
             $table->integer('pembayaran_id')->default('1');
 

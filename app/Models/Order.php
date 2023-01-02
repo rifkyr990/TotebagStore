@@ -2,14 +2,15 @@
 
 namespace App\Models;
 
+use App\Models\Size;
+use App\Models\Pickup;
+use App\Models\Status;
 use App\Models\Customer;
 use App\Models\Material;
-use App\Models\Size;
 use App\Models\Pembayaran;
-use App\Models\Status;
-use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 use NunoMaduro\Collision\Adapters\Phpunit\State;
+use Illuminate\Database\Eloquent\Factories\HasFactory;
 
 class Order extends Model
 {
@@ -52,5 +53,10 @@ class Order extends Model
     public function status()
     {
         return $this->belongsTo(Status::class);
+    }
+
+    public function pickup()
+    {
+        return $this->belongsTo(Pickup::class);
     }
 }

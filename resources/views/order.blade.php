@@ -2,17 +2,70 @@
 @section('content')
 
 <div class="container mt-5">
-    <h2 class="text-center fw-bold pt-5">Data Orderan</h2>
+    @if (Auth::user()->role_as == '1')
+    <h2 class="text-center fw-bold pt-5">Admin Dashboard</h2>
     <div class="custom-separator my-3 mb-5 mx-auto bg-brown"></div>
+
+    <li class="my-4"><a href="" class="text-decoration-none fs-5 fw-bold text-dark">Orderan product</a></li>
+    <table class="table table-bordered">
+        <thead>
+            <tr class="text-center">
+
+                <td scope="col">No</td>
+                <td scope="col">ID Pemesan</td>
+                <td scope="col">Nama product</td>
+                <td scope="col" width="150">harga</td>
+                <td scope="col" width="400">warna</td>
+                <td scope="col">jumlah</td>
+                <td scope="col" width="300">ukuran</td>
+                <td scope="col" width="300">Status pembayaran</td>
+                <td scope="col" width="300">Status pesanan</td>
+                <td scope="col">Total harga</td>
+                <td scope="col" width="300">Action</td>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach ($pesanan as $pelanggan)
+            <tr class="text-center">
+                <td>{{$loop->iteration}}</td>
+                <td>{{$pelanggan->user_id}}</td>
+                <td>{{$pelanggan->nama_product}}</td>
+                <td>{{$pelanggan->harga}}</td>
+                <td>{{$pelanggan->color->nama_warna}}</td>
+                <td>{{$pelanggan->quantity}}</td>
+                <td>{{$pelanggan->size->nama_ukuran}}</td>
+                <td>{{$pelanggan->pembayaran->nama_pembayaran}}</td>
+                <td>{{$pelanggan->status->nama_status}}</td>
+                <td>{{$pelanggan->total_cost}}</td>
+                <td>
+                    <form action="{{ route('hapus', $pelanggan->id) }}" method="post">
+                        <a href="{{ route('show', $pelanggan->id) }}" class="btn btn-info">Detail</a>
+                        <a href="{{ route('edit', $pelanggan->id) }}" class="btn btn-primary">Edit</a>
+
+                        @csrf
+                        @method('DELETE')
+
+                        <button type="submit" class="btn btn-danger">Delete</button>
+                    </form>
+                </td>
+            </tr>
+            @endforeach
+        </tbody>
+    </table>
+
+
+    <li class="my-4"><a href="" class="text-decoration-none fs-5 fw-bold text-dark">Orderan Custom</a></li>
     <table class="table table-bordered">
         <thead>
             <tr class="text-center">
                 <td scope="col">No</td>
                 <td scope="col">Nama</td>
-                <td scope="col"width="150">alamat</td>
+                <td scope="col" width="150">alamat</td>
                 <td scope="col" width="400">Design totebag</td>
                 <td scope="col">Jenis Material</td>
                 <td scope="col" width="150">size</td>
+                <td scope="col" width="300">Status pembayaran</td>
+                <td scope="col" width="300">Status pesanan</td>
                 <td scope="col">Total bayar</td>
                 <td scope="col" width="300">Action</td>
             </tr>
@@ -26,6 +79,8 @@
                 <td><img src="file/{{ $order->design }}" class="img-fluid rounded-start w-50"></td>
                 <td>{{$order->material->nama_material}}</td>
                 <td>{{$order->size->nama_ukuran}}</td>
+                <td>{{$pelanggan->pembayaran->nama_pembayaran}}</td>
+                <td>{{$pelanggan->status->nama_status}}</td>
                 <td>{{number_format($order->material->harga * $order->quantity)}}</td>
                 <td>
                     <form action="{{ route('destroy', $order->id) }}" method="post">
@@ -42,6 +97,81 @@
             @endforeach
         </tbody>
     </table>
+
+    <li class="my-4"><a href="" class="text-decoration-none fs-5 fw-bold text-dark">Konfirmasi pembayaran</a></li>
+    <table class="table table-bordered">
+        <thead>
+            <tr class="text-center">
+                <td scope="col">No</td>
+                <td scope="col">ID pesanan</td>
+                <td scope="col" width="150">Nama pengirim</td>
+                <td scope="col" width="400">Bukti pembayaran</td>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach ($confirm as $pesan)
+            <tr class="text-center">
+                <td>{{$loop->iteration}}</td>
+                <td>{{$pesan->id_pesanan}}</td>
+                <td>{{$pesan->nama_pengirim}}</td>
+                <td><img src="konfir/{{ $pesan->foto }}" class="img-fluid rounded-start w-25"></td>
+            </tr>
+            @endforeach
+        </tbody>
+    </table>
+
+    <li class="my-4"><a href="" class="text-decoration-none fs-5 fw-bold text-dark">Data pelanggan</a></li>
+    <table class="table table-bordered">
+        <thead>
+            <tr class="text-center">
+
+                <td scope="col">No</td>
+                <td scope="col">User_id</td>
+                <td scope="col">Nama</td>
+                <td scope="col" width="150">alamat</td>
+                <td scope="col" width="400">No. handphone</td>
+                <td scope="col">Email</td>
+                
+                <td scope="col" width="300">Action</td>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach ($customers as $pelanggan)
+            <tr class="text-center">
+                <td>{{$loop->iteration}}</td>
+                <td>{{$pelanggan->user_id}}</td>
+                <td>{{$pelanggan->nama}}</td>
+                <td>{{$pelanggan->alamat}}</td>
+                <td>{{$pelanggan->hp}}</td>
+                <td>{{$pelanggan->email}}</td>
+                <td>
+                    <form action="{{ route('destroy', $pelanggan->id) }}" method="post">
+                        <a href="{{ route('show', $pelanggan->id) }}" class="btn btn-info">Detail</a>
+                        <a href="{{ route('edit', $pelanggan->id) }}" class="btn btn-primary">Edit</a>
+
+                        @csrf
+                        @method('DELETE')
+
+                        <button type="submit" class="btn btn-danger">Delete</button>
+                    </form>
+                </td>
+            </tr>
+            @endforeach
+        </tbody>
+    </table>
+
+    @else
+    <div class="container position-fixed">
+        <div class="text-center d-flex justify-content-center w-100 flex-column vh-100">
+            <div class="row main mx-auto py-5 px-4" style="width: 500px;">
+            <img src="{{ asset('asset/img/not-found.svg') }}" class="img-fluid animated" alt="gambar">
+                <h2 class="fw-bold mt-3">Error not found</h2>
+                <p class="text-muted">Silahkan kembali ke halaman utama</p>
+                <button class="btn btn-primary d-block mx-auto" style="width: 200px;"><a href="{{ url('/home') }}" class="text-light text-decoration-none">Back to Home</a></button>
+            </div>
+        </div>
+    </div>
+    @endif
 </div>
 
 @endsection

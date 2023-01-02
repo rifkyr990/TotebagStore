@@ -82,11 +82,18 @@
                             </a>
 
                             <div class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdown">
-                                <a href="{{ route('myorder') }}" class="dropdown-item text-decoration-none">Pesanan saya</a>
+                                <!-- <a href="{{ route('myorder') }}" class="dropdown-item text-decoration-none">Pesanan saya</a> -->
+                                @if (Auth::user()->role_as == '1')
                                 <a href="{{ url('/product/create') }}" class="dropdown-item text-decoration-none">Upload
                                     Product</a>
+                                @endif
+                                <a href="{{ route('myorder') }}" class="dropdown-item text-decoration-none">Pesanan
+                                    Saya</a>
+                                <a href="{{ url('/confirm') }}" class="dropdown-item text-decoration-none">Konfirmasi
+                                    pembayaran</a>
                                 <a href="{{ route('alamat') }}" class="dropdown-item text-decoration-none">Tambah
                                     alamat</a>
+
                                 <a class="dropdown-item" href="{{ route('logout') }}" onclick="event.preventDefault();
                                                      document.getElementById('logout-form').submit();">
                                     {{ __('Logout') }}

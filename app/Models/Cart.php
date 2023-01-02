@@ -2,12 +2,13 @@
 
 namespace App\Models;
 
-use Illuminate\Database\Eloquent\Factories\HasFactory;
-use Illuminate\Database\Eloquent\Model;
-use App\Models\Pembayaran;
-use App\Models\Status;
-use App\Models\Color;
 use App\Models\Size;
+use App\Models\Color;
+use App\Models\Pickup;
+use App\Models\Status;
+use App\Models\Pembayaran;
+use Illuminate\Database\Eloquent\Model;
+use Illuminate\Database\Eloquent\Factories\HasFactory;
 
 class Cart extends Model
 {
@@ -31,5 +32,10 @@ class Cart extends Model
     public function status()
     {
         return $this->belongsTo(Status::class);
+    }
+
+    public function pickup()
+    {
+        return $this->belongsTo(Pickup::class);
     }
 }

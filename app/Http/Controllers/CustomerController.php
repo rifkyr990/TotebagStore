@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Confirm;
 use App\Models\Customer;
 use App\Models\User;
 use Illuminate\Http\Request;
@@ -28,6 +29,15 @@ class CustomerController extends Controller
         return view('alamat');
     }
     
+    /**
+     * Show the form for creating a new resource.
+     *
+     * @return \Illuminate\Http\Response
+     */
+    public function confirm()
+    {
+        return view('confirm');
+    }
     /**
      * Store a newly created resource in storage.
      *
@@ -76,7 +86,7 @@ class CustomerController extends Controller
      */
     public function edit(Customer $customer)
     {
-        //
+        $customer = Customer::all();
     }
 
     /**
@@ -88,7 +98,10 @@ class CustomerController extends Controller
      */
     public function update(Request $request, Customer $customer)
     {
-        //
+        $input = $request->all();
+        $customer->update($input);
+
+        return redirect()->route('order')->with('success', 'Orderan berhasil diupdate');
     }
 
     /**
@@ -97,8 +110,38 @@ class CustomerController extends Controller
      * @param  \App\Models\Customer  $customer
      * @return \Illuminate\Http\Response
      */
-    public function destroy(Customer $customer)
+    public function hapus(Customer $customer)
     {
-        //
+        $customer->delete();
+
+        return redirect()->back()->with('success', 'orderan berhasil dihapus');
+    }
+
+    /**
+     * Store a newly created resource in storage.
+     *
+     * @param  \Illuminate\Http\Request  $request
+     * @return \Illuminate\Http\Response
+     */
+    public function addconfirm(Request $request) {
+        $request->validate([
+            'foto' => 'required|file|mimes:png,jpg,svg|max:2048',
+        ]);
+
+        $gambar = $request->file('foto');
+        $destinationPath = 'konfir/';
+        $gambarImage = date('YmdHis') . "." .$gambar->getClientOriginalExtension();
+        $gambar->move($destinationPath, $gambarImage);
+        $input['foto'] = "$gambarImage";
+
+        $data = $request->all();
+
+        $confirms = new Confirm;
+        $confirms->id_pesanan = $data['id_pesanan'];
+        $confirms->nama_pengirim = $data['nama_pengirim'];
+        $confirms->foto = $gambarImage;
+
+        $confirms->save();
+        return redirect()->route('home')->with('status', 'success');
     }
 }

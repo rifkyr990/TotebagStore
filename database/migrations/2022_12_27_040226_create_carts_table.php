@@ -22,6 +22,7 @@ return new class extends Migration
             $table->integer('quantity')->nullable();
             $table->integer('size_id')->nullable();
             $table->integer('total_cost')->nullable();
+            $table->integer('pickup_id');
             $table->integer('status_id')->default('1');
             $table->integer('pembayaran_id')->default('1');
             $table->timestamps();

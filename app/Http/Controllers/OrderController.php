@@ -9,6 +9,7 @@ use App\Models\Customer;
 use App\Models\Material;
 use App\Models\Product;
 use App\Models\Color;
+use App\Models\Confirm;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 
@@ -21,12 +22,15 @@ class OrderController extends Controller
      */
     public function index()
     {
+        $confirm = Confirm::all();
+        $customers = Customer::all();
+        $pesanan = Cart::all();
         $size = Size::with('orders')->get();
         $material = Material::with('orders')->get();
         $customer = Customer::with('orders')->get();
         $orders = Order::with('size','material','customer')->get();
 
-        return view('order', compact('size', 'material', 'customer', 'orders'));
+        return view('order', compact('size', 'material', 'customer', 'orders', 'pesanan', 'customers', 'confirm'));
     }
 
     /**
