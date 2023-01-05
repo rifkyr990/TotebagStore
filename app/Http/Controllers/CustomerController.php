@@ -87,6 +87,8 @@ class CustomerController extends Controller
     public function edit(Customer $customer)
     {
         $customer = Customer::all();
+
+        return view('edit', compact('customer'));
     }
 
     /**
@@ -107,14 +109,14 @@ class CustomerController extends Controller
     /**
      * Remove the specified resource from storage.
      *
-     * @param  \App\Models\Customer  $customer
+     * @param  \App\Models\Order  $customer
      * @return \Illuminate\Http\Response
      */
-    public function hapus(Customer $customer)
+    public function hapuscust(Customer $customer)
     {
         $customer->delete();
 
-        return redirect()->back()->with('success', 'orderan berhasil dihapus');
+        return redirect()->route('order')->with('success', 'orderan berhasil dihapus');
     }
 
     /**

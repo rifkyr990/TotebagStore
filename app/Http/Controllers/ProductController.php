@@ -7,6 +7,7 @@ use App\Models\Color;
 use App\Models\Size;
 use App\Models\Product;
 use App\Models\Material;
+use App\Models\Pickup;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 
@@ -80,8 +81,9 @@ class ProductController extends Controller
     {
         $color = Color::all();
         $size = Size::all();
+        $pickup = Pickup::all();
 
-        return view('product.show', compact('product', 'size', 'color'));
+        return view('product.show', compact('product', 'size', 'color', 'pickup'));
     }
 
     /**
@@ -123,6 +125,7 @@ class ProductController extends Controller
         $cart->harga = $product->harga;
         $cart->color_id = $request->color_id;
         $cart->quantity = $request->quantity;
+        $cart->pickup_id = $request->pickup_id;
         $cart->size_id = $request->size_id;
         $cart->total_cost = $product->harga * $cart->quantity;
         $cart->user_id = auth()->id();

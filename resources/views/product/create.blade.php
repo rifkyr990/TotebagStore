@@ -13,7 +13,7 @@
 <body>
     <div class="container">
         <div class="col-sm-12 my-5 text-center">
-            <h2 class="fw-bold text-green">Tambah Product</h2>
+            <h2 class="fw-bold text-green pt-5 mt-5">Tambah Product</h2>
             <div class="custom-separator my-3 mb-5 mx-auto bg-brown"></div>
         </div>
         @if ($errors->any())

@@ -1,159 +1,141 @@
 @extends('layouts.app')
 @section('content')
-<div class="py-5 bg-light team1">
+<div class="py-5 team4 mt-5 overflow-hidden">
     <div class="container">
-        <div class="row justify-content-center mb-3">
+        <div class="row justify-content-center mb-4">
             <div class="col-md-7 text-center">
                 <h3 class="mb-3">Experienced & Professional Team</h3>
-                <h6 class="subtitle font-weight-normal">You can relay on our amazing features list and also our customer
-                    services will be great experience for you without doubt and in no-time</h6>
+                <h6 class="subtitle">You can relay on our amazing features list and also our customer services will be
+                    great experience for you without doubt and in no-time</h6>
             </div>
         </div>
         <div class="row">
             <!-- column  -->
-            <div class="col-lg-6">
-                <div class="card card-shadow border-0 mb-4">
-                    <!-- Row -->
-                    <div class="row no-gutters">
-                        <div class="col-md-5 pro-pic"
-                            style="background:url(https://www.wrappixel.com/demos/ui-kit/wrapkit/assets/images/team/t1.jpg) center center no-repeat / cover">
-                            <div class="card-img-overlay">
-                                <ul class="list-inline position-relative text-center">
-                                    <li class="list-inline-item"><a href="#"
-                                            class="text-decoration-none d-block text-white px-1"><i
-                                                class="icon-social-facebook"></i></a></li>
-                                    <li class="list-inline-item"><a href="#"
-                                            class="text-decoration-none d-block text-white px-1"><i
-                                                class="icon-social-twitter"></i></a></li>
-                                    <li class="list-inline-item"><a href="#"
-                                            class="text-decoration-none d-block text-white px-1"><i
-                                                class="icon-social-instagram"></i></a></li>
-                                    <li class="list-inline-item"><a href="#"
-                                            class="text-decoration-none d-block text-white px-1"><i
-                                                class="icon-social-behance"></i></a></li>
-                                </ul>
-                            </div>
-                        </div>
-                        <div class="col-md-7 bg-white">
-                            <div class="p-4">
-                                <h6 class="mb-3 font-weight-medium">Michael Doe</h6>
-                                <p>You can relay on our amazing features list and also our customer services will be
-                                    great experience.</p>
-                            </div>
+            <div class="col-lg-3 mb-4">
+                <!-- Row -->
+                <div class="row w-100">
+                    <div class="col-md-12">
+                        <img src="{{asset('asset/img/weni.png')}}"
+                            alt="wrapkit" class="img-fluid w-100 h-100 rounded-circle" />
+                    </div>
+                    <div class="col-md-12 text-center">
+                        <div class="pt-2">
+                            <h5 class="mt-4 font-weight-medium mb-0">Weni Sepriani</h5>
+                            <h6 class="subtitle mb-3">Back-end Depelopment
+                            </h6>
+                            <p>Merancang sistem basis data untuk menyimpan, mengelola, dan mengambil data yang
+                                diperlukan serta mengintegrasikan layanan back-end dengan aplikasi atau
+                                situs web melalui API</p>
+                            <ul class="list-inline">
+                                <li class="list-inline-item"><a href="#" class="text-decoration-none d-block px-1"><i
+                                            class="icon-social-facebook"></i></a></li>
+                                <li class="list-inline-item"><a href="#" class="text-decoration-none d-block px-1"><i
+                                            class="icon-social-twitter"></i></a></li>
+                                <li class="list-inline-item"><a href="#" class="text-decoration-none d-block px-1"><i
+                                            class="icon-social-instagram"></i></a></li>
+                                <li class="list-inline-item"><a href="#" class="text-decoration-none d-block px-1"><i
+                                            class="icon-social-behance"></i></a></li>
+                            </ul>
                         </div>
                     </div>
-                    <!-- Row -->
                 </div>
+                <!-- Row -->
             </div>
             <!-- column  -->
-            <div class="col-lg-6">
-                <div class="card card-shadow border-0 mb-4">
-                    <!-- Row -->
-                    <div class="row no-gutters card-shadow">
-                        <div class="col-md-5 pro-pic"
-                            style="background:url(https://www.wrappixel.com/demos/ui-kit/wrapkit/assets/images/team/t2.jpg) center center no-repeat / cover">
-                            <div class="card-img-overlay">
-                                <ul class="list-inline position-relative text-center">
-                                    <li class="list-inline-item"><a href="#"
-                                            class="text-decoration-none d-block text-white px-1"><i
-                                                class="icon-social-facebook"></i></a></li>
-                                    <li class="list-inline-item"><a href="#"
-                                            class="text-decoration-none d-block text-white px-1"><i
-                                                class="icon-social-twitter"></i></a></li>
-                                    <li class="list-inline-item"><a href="#"
-                                            class="text-decoration-none d-block text-white px-1"><i
-                                                class="icon-social-instagram"></i></a></li>
-                                    <li class="list-inline-item"><a href="#"
-                                            class="text-decoration-none d-block text-white px-1"><i
-                                                class="icon-social-behance"></i></a></li>
-                                </ul>
-                            </div>
-                        </div>
-                        <div class="col-md-7 bg-white">
-                            <div class="p-4">
-                                <h6 class="mb-3 font-weight-medium">Michael Doe</h6>
-                                <p>You can relay on our amazing features list and also our customer services will be
-                                    great experience.</p>
-                            </div>
+            <!-- column  -->
+            <div class="col-lg-3 mb-4">
+                <!-- Row -->
+                <div class="row w-100">
+                    <div class="col-md-12">
+                        <img src="{{asset('asset/img/wahyu.png')}}"
+                            alt="wrapkit" class="img-fluid rounded-circle w-100" />
+                    </div>
+                    <div class="col-md-12 text-center">
+                        <div class="pt-2">
+                            <h5 class="mt-4 font-weight-medium mb-0">Wahyu hidayat</h5>
+                            <h6 class="subtitle mb-3">system analys
+                            </h6>
+                            <p>Bertanggung jawab untuk mengumpulkan kebutuhan pengguna, menganalisis kebutuhan sistem
+                                dan menentukan spesifikasi sistem yang sesuai.
+                            </p>
+                            <ul class="list-inline">
+                                <li class="list-inline-item"><a href="#" class="text-decoration-none d-block px-1"><i
+                                            class="icon-social-facebook"></i></a></li>
+                                <li class="list-inline-item"><a href="#" class="text-decoration-none d-block px-1"><i
+                                            class="icon-social-twitter"></i></a></li>
+                                <li class="list-inline-item"><a href="#" class="text-decoration-none d-block px-1"><i
+                                            class="icon-social-instagram"></i></a></li>
+                                <li class="list-inline-item"><a href="#" class="text-decoration-none d-block px-1"><i
+                                            class="icon-social-behance"></i></a></li>
+                            </ul>
                         </div>
                     </div>
-                    <!-- Row -->
                 </div>
+                <!-- Row -->
             </div>
             <!-- column  -->
-        </div>
-        <div class="row">
             <!-- column  -->
-            <div class="col-lg-6">
-                <div class="card card-shadow border-0 mb-4">
-                    <!-- Row -->
-                    <div class="row no-gutters card-shadow">
-                        <div class="col-md-5 pro-pic"
-                            style="background:url(https://www.wrappixel.com/demos/ui-kit/wrapkit/assets/images/team/t3.jpg) center center no-repeat / cover">
-                            <div class="card-img-overlay">
-                                <ul class="list-inline position-relative text-center">
-                                    <li class="list-inline-item"><a href="#"
-                                            class="text-decoration-none d-block text-white px-1"><i
-                                                class="icon-social-facebook"></i></a></li>
-                                    <li class="list-inline-item"><a href="#"
-                                            class="text-decoration-none d-block text-white px-1"><i
-                                                class="icon-social-twitter"></i></a></li>
-                                    <li class="list-inline-item"><a href="#"
-                                            class="text-decoration-none d-block text-white px-1"><i
-                                                class="icon-social-instagram"></i></a></li>
-                                    <li class="list-inline-item"><a href="#"
-                                            class="text-decoration-none d-block text-white px-1"><i
-                                                class="icon-social-behance"></i></a></li>
-                                </ul>
-                            </div>
-                        </div>
-                        <div class="col-md-7 bg-white">
-                            <div class="p-4">
-                                <h6 class="mb-3 font-weight-medium">Michael Doe</h6>
-                                <p>You can relay on our amazing features list and also our customer services will be
-                                    great experience.</p>
-                            </div>
+            <div class="col-lg-3 mb-4">
+                <!-- Row -->
+                <div class="row w-100">
+                    <div class="col-md-12">
+                        <img src="{{asset('asset/img/gilang.png')}}"
+                            alt="wrapkit" class="img-fluid w-100 h-100 rounded-circle" />
+                    </div>
+                    <div class="col-md-12 text-center">
+                        <div class="pt-2">
+                            <h5 class="mt-4 font-weight-medium mb-0">Gilang damar maulana</h5>
+                            <h6 class="subtitle mb-3">Front-end Development
+                            </h6>
+                            <p>Bertugas menangani dan melalukan implementasi bagian yang terlihat oleh pengguna.
+                            </p>
+                            <ul class="list-inline">
+                                <li class="list-inline-item"><a href="#" class="text-decoration-none d-block px-1"><i
+                                            class="icon-social-facebook"></i></a></li>
+                                <li class="list-inline-item"><a href="#" class="text-decoration-none d-block px-1"><i
+                                            class="icon-social-twitter"></i></a></li>
+                                <li class="list-inline-item"><a href="#" class="text-decoration-none d-block px-1"><i
+                                            class="icon-social-instagram"></i></a></li>
+                                <li class="list-inline-item"><a href="#" class="text-decoration-none d-block px-1"><i
+                                            class="icon-social-behance"></i></a></li>
+                            </ul>
                         </div>
                     </div>
-                    <!-- Row -->
                 </div>
+                <!-- Row -->
             </div>
             <!-- column  -->
-            <div class="col-lg-6">
-                <div class="card card-shadow border-0 mb-4">
-                    <!-- Row -->
-                    <div class="row no-gutters card-shadow">
-                        <div class="col-md-5 pro-pic"
-                            style="background:url(https://www.wrappixel.com/demos/ui-kit/wrapkit/assets/images/team/t4.jpg) center center no-repeat / cover">
-                            <div class="card-img-overlay">
-                                <ul class="list-inline position-relative text-center">
-                                    <li class="list-inline-item"><a href="#"
-                                            class="text-decoration-none d-block text-white px-1"><i
-                                                class="icon-social-facebook"></i></a></li>
-                                    <li class="list-inline-item"><a href="#"
-                                            class="text-decoration-none d-block text-white px-1"><i
-                                                class="icon-social-twitter"></i></a></li>
-                                    <li class="list-inline-item"><a href="#"
-                                            class="text-decoration-none d-block text-white px-1"><i
-                                                class="icon-social-instagram"></i></a></li>
-                                    <li class="list-inline-item"><a href="#"
-                                            class="text-decoration-none d-block text-white px-1"><i
-                                                class="icon-social-behance"></i></a></li>
-                                </ul>
-                            </div>
-                        </div>
-                        <div class="col-md-7 bg-white">
-                            <div class="p-4">
-                                <h6 class="mb-3 font-weight-medium">Michael Doe</h6>
-                                <p>You can relay on our amazing features list and also our customer services will be
-                                    great experience.</p>
-                            </div>
+            <!-- column  -->
+            <div class="col-lg-3 mb-4">
+                <!-- Row -->
+                <div class="row w-100">
+                    <div class="col-md-12">
+                        <img src="{{asset('asset/img/niluh.png')}}"
+                            alt="wrapkit" class="img-fluid rounded-circle" />
+                    </div>
+                    <div class="col-md-12 text-center">
+                        <div class="pt-2">
+                            <h5 class="mt-4 font-weight-medium mb-0">Niluh Sekar Zulfa Umardhani</h5>
+                            <h6 class="subtitle mb-3">dokumenter
+                            </h6>
+                            <p>Bertanggung jawab untuk menulis dokumentasi sistem yang menjelaskan cara penggunaan
+                                sistem oleh pengguna akhir.
+                            </p>
+                            <ul class="list-inline">
+                                <li class="list-inline-item"><a href="#" class="text-decoration-none d-block px-1"><i
+                                            class="icon-social-facebook"></i></a></li>
+                                <li class="list-inline-item"><a href="#" class="text-decoration-none d-block px-1"><i
+                                            class="icon-social-twitter"></i></a></li>
+                                <li class="list-inline-item"><a href="#" class="text-decoration-none d-block px-1"><i
+                                            class="icon-social-instagram"></i></a></li>
+                                <li class="list-inline-item"><a href="#" class="text-decoration-none d-block px-1"><i
+                                            class="icon-social-behance"></i></a></li>
+                            </ul>
                         </div>
                     </div>
-                    <!-- Row -->
                 </div>
+                <!-- Row -->
             </div>
-            <!-- column  -->
         </div>
     </div>
 </div>

@@ -28,7 +28,7 @@ Route::get('order', [App\Http\Controllers\OrderController::class, 'index'])->nam
 Route::get('show/{order}', [App\Http\Controllers\OrderController::class, 'show'])->name('show');
 Route::get('edit/{order}', [App\Http\Controllers\OrderController::class, 'edit'])->name('edit');
 Route::put('edit/{order}', [App\Http\Controllers\OrderController::class, 'update'])->name('update');
-Route::delete('/{order}', [App\Http\Controllers\OrderController::class, 'destroy'])->name('destroy');
+
 Route::post('/addcustom', [App\Http\Controllers\OrderController::class, 'addcustom'])->name('addcustom');
 Route::get('create', [App\Http\Controllers\OrderController::class, 'create'])->name('create');
 Route::get('myorder', [App\Http\Controllers\OrderController::class, 'myOrder'])->name('myorder');
@@ -37,7 +37,7 @@ Route::get('alamat', [App\Http\Controllers\CustomerController::class, 'create'])
 Route::get('confirm', [App\Http\Controllers\CustomerController::class, 'confirm'])->name('confirm');
 Route::post('/addalamat', [App\Http\Controllers\CustomerController::class, 'addalamat'])->name('addalamat');
 Route::post('/addconfirm', [App\Http\Controllers\CustomerController::class, 'addconfirm'])->name('addconfirm');
-Route::delete('/{customer}', [App\Http\Controllers\CustomerController::class, 'hapus'])->name('hapus');
+Route::delete('/{customer}', [App\Http\Controllers\CustomerController::class, 'hapuscust'])->name('hapuscust');
 
 Route::get('product', [App\Http\Controllers\ProductController::class, 'index'])->name('product');
 Route::get('/product/create', [App\Http\Controllers\ProductController::class, 'create'])->name('create');
@@ -49,3 +49,5 @@ Route::post('/addcart/{product}', [App\Http\Controllers\ProductController::class
 
 Route::get('/product/payment/{cart}', [App\Http\Controllers\ProductController::class, 'payments'])->name('payments');
 Route::get('/payment/{order}', [App\Http\Controllers\OrderController::class, 'payment'])->name('payment');
+
+Route::delete('/{cart}', [App\Http\Controllers\ProductController::class, 'destroy'])->name('destroy');

@@ -3,7 +3,7 @@
 
 <body>
     <div class="container">
-        <div class="col-sm-12 mt-5 text-center">
+        <div class="col-sm-12 mt-5 text-center pt-5">
             <h2 class="fw-bold text-green">Custom Design</h2>
             <div class="custom-separator my-3 mb-5 mx-auto bg-brown"></div>
         </div>

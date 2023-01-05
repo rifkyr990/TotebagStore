@@ -12,7 +12,7 @@
 </head>
 
 <body>
-    <div class="container mt-5 mb-5">
+    <div class="container mt-5 mb-5 pt-3">
         <h2 class="text-center fw-bold mt-5">Detail Product</h2>
         <div class="custom-separator my-3 mb-5 mx-auto bg-brown"></div>
         <div class="card">
@@ -63,6 +63,7 @@
                                     @endforeach
                                 </select>
                             </div>
+                            
                             <div class="buttons d-flex flex-row mt-5 gap-3">
                                 <button class="btn btn-outline-dark" type="submit">Beli Sekarang</button>
                                 <button class="btn btn-dark"><a href="{{url('/product')}}" class="text-decoration-none text-light">Kembali</a></button>

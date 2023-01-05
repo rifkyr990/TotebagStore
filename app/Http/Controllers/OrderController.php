@@ -10,6 +10,7 @@ use App\Models\Material;
 use App\Models\Product;
 use App\Models\Color;
 use App\Models\Confirm;
+use App\Models\Pickup;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 
@@ -40,12 +41,13 @@ class OrderController extends Controller
      */
     public function create()
     {
+        $pickup = Pickup::all();
         $color = Color::all();
         $material = Material::all();
         $customer = Customer::where('user_id', Auth::id())->get();
         $size = Size::all();
 
-        return view('create', compact('material', 'customer', 'size', 'color'));
+        return view('create', compact('material', 'customer', 'size', 'color', 'pickup'));
     }
 
     /**
@@ -123,11 +125,12 @@ class OrderController extends Controller
      */
     public function edit(Order $order)
     {
+        $pickup = Pickup::all();
         $material = Material::all();
         $customer = Customer::all();
         $size = Size::all();
 
-        return view('edit', compact('order','material', 'customer', 'size'));
+        return view('edit', compact('order','material', 'customer', 'size', 'pickup'));
     }
 
 

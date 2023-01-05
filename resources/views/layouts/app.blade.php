@@ -33,7 +33,7 @@
 <body>
     <div id="app">
         @if (Auth::check())
-        <nav class="navbar navbar-expand-md navbar-light shadow-sm">
+        <nav class="navbar navbar-expand-md navbar-light shadow-sm fixed-top">
             <div class="container">
                 <a class="navbar-brand text-light" href="{{ url('/') }}">
                     BagUp

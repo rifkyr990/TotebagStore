@@ -3,7 +3,7 @@
 @section('content')
 
 <div class="container">
-    <h2 class="text-center fw-bold mt-5">Pesanan Saya</h2>
+    <h2 class="text-center fw-bold mt-5 pt-5">Pesanan Saya</h2>
     <div class="custom-separator mx-auto my-3 mb-4 bg-brown"></div>
 
 

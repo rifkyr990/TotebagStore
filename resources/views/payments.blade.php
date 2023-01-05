@@ -12,7 +12,7 @@
 </head>
 
 <body>
-    <section class="method-payment py-2">
+    <section class="method-payment py-2 pt-5">
         <div class="container mt-5 mb-5 d-flex justify-content-center">
             <div class="card p-5">
                 <div>

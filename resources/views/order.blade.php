@@ -21,33 +21,21 @@
                 <td scope="col" width="300">Status pembayaran</td>
                 <td scope="col" width="300">Status pesanan</td>
                 <td scope="col">Total harga</td>
-                <td scope="col" width="300">Action</td>
             </tr>
         </thead>
         <tbody>
-            @foreach ($pesanan as $pelanggan)
+            @foreach ($pesanan as $cart)
             <tr class="text-center">
                 <td>{{$loop->iteration}}</td>
-                <td>{{$pelanggan->user_id}}</td>
-                <td>{{$pelanggan->nama_product}}</td>
-                <td>{{$pelanggan->harga}}</td>
-                <td>{{$pelanggan->color->nama_warna}}</td>
-                <td>{{$pelanggan->quantity}}</td>
-                <td>{{$pelanggan->size->nama_ukuran}}</td>
-                <td>{{$pelanggan->pembayaran->nama_pembayaran}}</td>
-                <td>{{$pelanggan->status->nama_status}}</td>
-                <td>{{$pelanggan->total_cost}}</td>
-                <td>
-                    <form action="{{ route('hapus', $pelanggan->id) }}" method="post">
-                        <a href="{{ route('show', $pelanggan->id) }}" class="btn btn-info">Detail</a>
-                        <a href="{{ route('edit', $pelanggan->id) }}" class="btn btn-primary">Edit</a>
-
-                        @csrf
-                        @method('DELETE')
-
-                        <button type="submit" class="btn btn-danger">Delete</button>
-                    </form>
-                </td>
+                <td>{{$cart->user_id}}</td>
+                <td>{{$cart->nama_product}}</td>
+                <td>{{$cart->harga}}</td>
+                <td>{{$cart->color->nama_warna}}</td>
+                <td>{{$cart->quantity}}</td>
+                <td>{{$cart->size->nama_ukuran}}</td>
+                <td>{{$cart->pembayaran->nama_pembayaran}}</td>
+                <td>{{$cart->status->nama_status}}</td>
+                <td>{{$cart->total_cost}}</td>
             </tr>
             @endforeach
         </tbody>
@@ -79,8 +67,8 @@
                 <td><img src="file/{{ $order->design }}" class="img-fluid rounded-start w-50"></td>
                 <td>{{$order->material->nama_material}}</td>
                 <td>{{$order->size->nama_ukuran}}</td>
-                <td>{{$pelanggan->pembayaran->nama_pembayaran}}</td>
-                <td>{{$pelanggan->status->nama_status}}</td>
+                <td>{{$order->pembayaran->nama_pembayaran}}</td>
+                <td>{{$order->status->nama_status}}</td>
                 <td>{{number_format($order->material->harga * $order->quantity)}}</td>
                 <td>
                     <form action="{{ route('destroy', $order->id) }}" method="post">
@@ -136,19 +124,17 @@
             </tr>
         </thead>
         <tbody>
-            @foreach ($customers as $pelanggan)
+            @foreach ($customers as $orang)
             <tr class="text-center">
                 <td>{{$loop->iteration}}</td>
-                <td>{{$pelanggan->user_id}}</td>
-                <td>{{$pelanggan->nama}}</td>
-                <td>{{$pelanggan->alamat}}</td>
-                <td>{{$pelanggan->hp}}</td>
-                <td>{{$pelanggan->email}}</td>
+                <td>{{$orang->user_id}}</td>
+                <td>{{$orang->nama}}</td>
+                <td>{{$orang->alamat}}</td>
+                <td>{{$orang->hp}}</td>
+                <td>{{$orang->email}}</td>
                 <td>
-                    <form action="{{ route('destroy', $pelanggan->id) }}" method="post">
-                        <a href="{{ route('show', $pelanggan->id) }}" class="btn btn-info">Detail</a>
-                        <a href="{{ route('edit', $pelanggan->id) }}" class="btn btn-primary">Edit</a>
-
+                    <form action="{{ route('hapuscust', $orang->id) }}" method="post">
+                        
                         @csrf
                         @method('DELETE')
 
@@ -172,6 +158,7 @@
         </div>
     </div>
     @endif
+    
 </div>
 
 @endsection

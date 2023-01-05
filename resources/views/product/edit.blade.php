@@ -14,7 +14,7 @@
 <body>
     <div class="container">
         <div class="col-sm-12">
-            <h2 class="text-center fw-bold">Update product</h2>
+            <h2 class="text-center fw-bold pt-5 mt-5">Update product</h2>
             <div class="custom-separator my-3 mb-5 mx-auto bg-brown"></div>
         </div>
         <form action="{{ route('update', $product->id) }}" method="post" enctype="multipart/form-data">

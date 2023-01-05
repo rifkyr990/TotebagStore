@@ -23,7 +23,7 @@
     @else
 
     @endif
-    <h2 class="text-center mt-5 fw-bold">All Product</h2>
+    <h2 class="text-center mt-5 fw-bold pt-5">All Product</h2>
     <div class="custom-separator my-3 mb-5 mx-auto bg-brown"></div>
     <div class="container">
         <div
